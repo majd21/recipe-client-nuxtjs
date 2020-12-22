@@ -1,31 +1,34 @@
 <template>
-  <div class="container">
-        <h2>{{recipe.title}}</h2>
-        <small>{{recipe.time}}</small>
-        <br>
-        Itmes for this food:
-        <p>{{recipe.items}}</p>
+  <div class="container mt-4">
+    <div style="width: 18rem;">
 
-        People:
-        <p>{{recipe.people}}</p>
-
-        Description:
-        <p>{{recipe.description}}</p>
+    <div class="card-body">
+    <h2 class="card-title">{{recipe.title}}</h2>
+    <small>{{recipe.time}}</small>
+    <p>{{recipe.items}}</p>
+    <p>{{recipe.people}}</p>
+    <p class="card-text">{{recipe.description}}</p>
+    </div>
+    </div>
 
         <form method="post">
-          <label for="title">Title</label>
-          <input type="text" v-model="title" placeholder="enter new title...">
-          <br>
-          <label for="items">Items</label>
-          <input type="text" v-model="items" placeholder="enter new items...">
-          <br>
-          <label for="people">People</label>
-          <input type="number" v-model="people" placeholder="enter new people...">
-          <br>
-          <label for="description">Description</label>
-          <textarea type="text" v-model="description" placeholder="enter new description..."></textarea>
-          <br>
-          <button @click="UpdateRecipe">Edit recipe</button>
+          <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" v-model="title" placeholder="enter new title...">
+      </div>
+      <div class="form-group">
+        <label for="items">Items</label>
+          <input class="form-control" type="text" v-model="items" placeholder="enter new items...">
+      </div>
+      <div class="form-group">
+        <label for="people">People</label>
+          <input class="form-control" type="number" v-model="people" placeholder="enter new people...">
+      </div>
+      <div class="form-group">
+       <label for="description">Description</label>
+        <textarea class="form-control" type="text" v-model="description" placeholder="enter new description..."></textarea>
+      </div>
+          <button class="btn btn-primary" @click="UpdateRecipe">Edit recipe</button>
         </form>
         <br>
         <a class="btn btn-warning" @click="DeleteRecipe">Delete Recipe</a>
